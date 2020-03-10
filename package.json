@@ -21,7 +21,8 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "migrate:save": "npx prisma2 migrate save --experimental",
     "migrate:up": "npx prisma2 migrate up --experimental",
-    "prisma:generate": "npx prisma2 generate"
+    "prisma:generate": "npx prisma2 generate",
+    "prisma:studio": "npx prisma2 studio --experimental"
   },
   "dependencies": {
     "@nestjs/common": "^6.10.14",
