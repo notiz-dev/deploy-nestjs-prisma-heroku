@@ -16,6 +16,6 @@ export class AppController {
 
   @Get('nationalParks')
   getNationalParks() {
-    return this.prisma.nationalPark.findMany();
+    return this.prisma.nationalPark.findMany({ include: { country: true } });
   }
 }
