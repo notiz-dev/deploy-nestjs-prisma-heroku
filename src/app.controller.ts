@@ -20,7 +20,7 @@ export class AppController {
     return this.prisma.nationalPark.findMany({ include: { country: true } });
   }
 
-  @Post('nationalPark')
+  @Post('nationalParks')
   async createNationalPark(@Body() nationalParkDto: NationalParkDto) {
     const country = await this.prisma.country.findOne({
       where: { name: nationalParkDto.country },
