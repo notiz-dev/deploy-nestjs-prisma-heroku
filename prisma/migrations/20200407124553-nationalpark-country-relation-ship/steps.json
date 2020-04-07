@@ -85,6 +85,52 @@
       "arity": "Required"
     },
     {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "NationalPark",
+          "field": "country"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "NationalPark",
+          "field": "country"
+        },
+        "directive": "relation"
+      },
+      "argument": "fields",
+      "value": "[countryId]"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "NationalPark",
+          "field": "country"
+        },
+        "directive": "relation"
+      },
+      "argument": "references",
+      "value": "[id]"
+    },
+    {
+      "tag": "CreateField",
+      "model": "NationalPark",
+      "field": "countryId",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
       "tag": "CreateModel",
       "model": "Country"
     },
@@ -148,6 +194,13 @@
         },
         "directive": "unique"
       }
+    },
+    {
+      "tag": "CreateField",
+      "model": "Country",
+      "field": "parks",
+      "type": "NationalPark",
+      "arity": "List"
     }
   ]
 }
